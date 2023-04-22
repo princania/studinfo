@@ -1,0 +1,24 @@
+<div class="c c1"></div>
+    <div class="nav white">
+        <div class="logo pacifico heading">StudInfo</div>
+        <ul class="menu normal">
+            <li class="home"><a href="#">home</a></li>
+            <li class="money"><a href="#">money</a></li>
+            <li class="time"><a href="#">time</a></li>
+            <li class="resources"><a href="#">resources</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            menu.classList.toggle("active");
+        })
+    </script>

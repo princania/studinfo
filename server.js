@@ -12,3 +12,11 @@ app.listen(3000, () => {
 app.get("/", function(req,res){
     res.render("home");
 });
+
+app.get("/login", function(req,res){
+    res.render("login");
+});
+
+app.get("/signup", function(req,res){
+    res.render("signup");
+})

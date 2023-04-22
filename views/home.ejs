@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("partials/head") %>
     <title>Home</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <div>Studinfo</div>
-        <div>
-            <ul>
-                <li>home</li>
-                <li>money</li>
-                <li>time</li>
-                <li>resources</li>
-            </ul>
+    
+    <%- include("partials/nav"); -%>
+    
+    <div class="p1">
+        <div class="p1text">
+            <p class="heading bold white">Welcome to <span class="pink">StudInfo</span></p><br>
+            <p class="white normal">StudInfo is a webapp built for students specifically, to better manage their
+                resources such as time and money.</p>
+            
+            <div class="buttons">
+                <button class="login white normal darkBlue bold">Login</button>
+                <button class="register white normal bold">Register</button>
+            </div>
         </div>
-    </header>
+        <div class="p1img">
+            <img src="main.png" alt="image">
+        </div>
+    </div>
+    
+    <div class="c c2"></div>
+    
+    <div class="catalog">
+        <img src="money.png" alt="money">
+        <img src="time2.png" alt="time">
+        <img src="resource.png" alt="resource">
+    </div>
+    <div class="description">
+        <div class="money des">
+            <div class="img">
+                <div class="c c3"></div>
+                <img class="img1" src="money2.png">
+            </div>
+            <div class="descriptiontext">
+                <div class="heading rubik money_color">Money Manager</div><br>
+                <div class="body white rubik normal">We help students manage finances by recording income, tracking expenses, viewing transactions, and displaying expenses as a graph.</div>
+                <button class="money_background try_me bold rubik">Try Now</button>
+            </div>
+        </div>
+        <div class="time des">
+            <div class="descriptiontext timedes">
+                <div class="heading rubik time_color">Time Manager</div><br>
+                <div class="body white rubik normal">Important Dates, Upcoming events, College time-table, syllabus
+                    progress and many other upcoming features necessary for students.</div>
+                <button class="time_background try_me bold rubik">Try Now</button>
+            </div>
+            <div class="img timeimg">
+                <div class="c c4"></div>
+                <img class="img1" src="time.png" class="img1">
+            </div>
+        </div>
+        <div class="resources des">
+            <div class="img">
+                <div class="c c5"></div>
+                <img class="img1" src="resource2.png">
+            </div>
+            <div class="descriptiontext">
+                <div class="heading rubik resource_color">Resource Manager</div><br>
+                <div class="body white rubik normal">Books, PDF’s, Images, Diagrams, Important notices, it’s like a
+                    digital store room for digital documents, so that you can retrieve them whenever required.</div>
+                <button class="resource_background try_me bold rubik">Try Now</button>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer") %>
 </body>
+
 </html>

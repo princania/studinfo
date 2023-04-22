@@ -4,14 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "watch": "npx tailwindcss -i ./input.css -o ./public/style.css --watch",
     "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.3.1"
-  },
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2"
