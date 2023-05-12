@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include("partials/head") %>
-    <title>Sign Up</title>
+        <title>Sign Up</title>
 </head>
+
 <body>
     <%- include("partials/nav") %>
-    <div class="mainlogo pacifico bold extraLarge pink">Studinfo</div>
+        <div class="mainlogo pacifico bold extraLarge pink">Studinfo</div>
         <div class="inputFields">
-            <input class="logininput shadow" type="text" placeholder="Name">
-            <input class="logininput shadow" type="number" placeholder="Registration No.">
-            <input class="logininput shadow" type="email" placeholder="Email">
-            <input class="logininput shadow" type="password" placeholder="Password"><br>
-            <button class="buttonL shadow signupbutton">Sign Up</button>
-            <div class="line"></div>
-            <div class="white">Already Signed Up ?</div>
-            <button class="loginButton shadow buttonL">Login</button>
+            <form action="/signup" method="post">
+                <input class="logininput shadow" type="text" name="name" placeholder="Name">
+                <input class="logininput shadow" type="number" name="reg" placeholder="Registration No.">
+                <input class="logininput shadow" type="email" name="email" placeholder="Email">
+                <input class="logininput shadow" type="password" name="pass" placeholder="Password"><br>
+                <button class="buttonL shadow signupbutton" type="submit" onclick="alert('Sign Up complete, Please Login Now !')">Sign Up</button>
+            </form>
+                <div class="line"></div>
+                <div class="white">Already Signed Up ?</div>
+                <button class="loginButton shadow buttonL" onclick="window.location.href='/login'">Login</button>
         </div>
-    <%- include("partials/footer") %>
+        <%- include("partials/footer") %>
 </body>
+
 </html>

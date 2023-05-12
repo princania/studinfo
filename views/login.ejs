@@ -3,20 +3,28 @@
 
 <head>
     <%- include("partials/head") %>
-    <title>login</title>
+        <title>login</title>
 </head>
 
 <body>
     <%- include("partials/nav"); -%>
         <div class="mainlogo pacifico bold extraLarge pink">Studinfo</div>
         <div class="inputFields">
-            <input class="logininput shadow" type="number" placeholder="Registration No.">
-            <input class="logininput shadow" type="password" placeholder="Password"><br>
-            <button class="loginButton shadow buttonL">Login</button>
+            <form action="/login" method="post">
+                <input class="logininput shadow" type="number" name="regno" placeholder="Registration No.">
+                <input class="logininput shadow" type="password" name="pass" placeholder="Password"><br>
+                <button class="loginButton shadow buttonL">Login</button>
+            </form>
             <div class="line"></div>
             <div class="white">New Here ?</div>
-            <button class="buttonL shadow signupbutton">Sign Up</button>
+            <button class="buttonL shadow signupbutton" onclick="window.location.href='/signup'">Sign Up</button>
+
         </div>
+        <script>
+            window.onload = function () {
+                alert("<%= error %>")
+            }
+        </script>
         <%- include("partials/footer") %>
 </body>
 

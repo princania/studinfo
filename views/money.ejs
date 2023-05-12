@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head") %>
+        <title>Money</title>
+</head>
+
+<body>
+    <%- include("partials/nav"); -%>
+        <div class="pageheading">
+            <div class="moneypageimg"><img src="money.png"></div>
+            <div class="textpart money_color">
+                <div class="maintitle heading">Money Manager</div>
+                <div class="quotes">“Money often costs too much.”</div>
+            </div>
+        </div>
+        <div class="showandgraph">
+            <div class="part1">
+                <div class="show">
+                    <div class="showbalance squarebox">
+                        <div class="value">5000</div>
+                        <div class="title">Balance</div>
+                    </div>
+                    <div class="showincome squarebox">
+                        <div class="value"><%= income %></div>
+                        <div class="title">Income</div>
+                    </div>
+                    <div class="showexpense squarebox">
+                        <div class="value">750</div>
+                        <div class="title">Expense</div>
+                    </div>
+                </div>
+                <div class="addincome">
+                    <form action="/addincome" method="post">
+                        <div class="inputamount"><input type="number" name="amount" placeholder="Amount" style="color: #E1C3DA;">
+                        </div>
+                        <div class="selectcatagory">
+                            <select name="catagory">
+                                <option value="salary" selected>salary</option>
+                                <option value="parents">parents</option>
+                                <option value="loan">loan</option>
+                                <option value="others">others</option>
+                            </select>
+                        </div>
+                        <div class="addincomebutton"><button
+                                class="time_background try_me_nomargin bold rubik" type="submit">AddIncome</button></div>
+                    </form>
+                </div>
+                <div class="addexpense">
+                    <form action="/addexpense" method="post">
+                        <div class="inputamount"><input type="number" name="amount" placeholder="Amount" style="color: #ABD5AD;">
+                        </div>
+                        <div class="selectcatagory">
+                            <select name="catagory">
+                                <option value="food" selected>food</option>
+                                <option value="travel">travel</option>
+                                <option value="bills">bills</option>
+                                <option value="shopping">shopping</option>
+                                <option value="rent">rent</option>
+                                <option value="others">others</option>
+                            </select>
+                        </div>
+                        <div class="addincomebutton"><button class="money_background try_me_nomargin bold rubik" type="submit">Add
+                                Expense</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="graph"> hello</div>
+        </div>
+
+        <div class="block2">
+            <div class="catagory">
+                <div class="squarebox catagorysqaure">
+                    <div class="value">50</div>
+                    <div class="title">Food</div>
+                </div>
+                <div class="squarebox catagorysqaure">
+                    <div class="value">100</div>
+                    <div class="title">Travel</div>
+                </div>
+                <div class="squarebox catagorysqaure">
+                    <div class="value">500</div>
+                    <div class="title">Bills</div>
+                </div>
+                <div class="squarebox catagorysqaure">
+                    <div class="value">400</div>
+                    <div class="title">Shopping</div>
+                </div>
+                <div class="squarebox catagorysqaure">
+                    <div class="value">90</div>
+                    <div class="title">Rent</div>
+                </div>
+                <div class="squarebox catagorysqaure">
+                    <div class="value">150</div>
+                    <div class="title">Others </div>
+                </div>
+            </div>
+
+
+            <!-- Add your HTML code for the .catagory div here -->
+
+            <script>
+                // Define an array of color variables in the order you want them to appear
+                var colors = [
+                    '--timecolor',
+                    '--resourcescolor',
+                    '--moneycolor',
+                    '--color1',
+                    '--color2'
+                ];
+
+                // Get all .squarebox elements on the page
+                var boxes = document.querySelectorAll('.catagorysqaure');
+
+                // Loop through each .squarebox element and assign a color variable
+                for (var i = 0; i < boxes.length; i++) {
+                    // Select the color variable based on the index of the current element
+                    var colorIndex = i % colors.length;
+                    var colorVariable = colors[colorIndex];
+                    // Apply the color variable to the .value and .title elements inside the .squarebox
+                    boxes[i].querySelector('.value').style.color = 'var(' + colorVariable + ')';
+                    boxes[i].querySelector('.title').style.backgroundColor = 'var(' + colorVariable + ')';
+                }
+            </script>
+
+
+            <div class="transactions">
+                <div class="divtitle normal bold darkBlue money_background">Transition History</div>
+                <table>
+                    <colgroup>
+                        <col style="width: 33.33%;">
+                        <col style="width: 33.33%;">
+                        <col style="width: 33.33%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Catagory</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%- include("partials/footer") %>
+</body>
+
+</html>
